@@ -36,7 +36,6 @@
     <select name="category" id="category">
         <option value="" selected>Any Category</option>
         <option value="9">General Knowledge </option>
-        <option value="10">Entertainment: Books</option>
         <option value="11">Entertainment: Film</option>
         <option value="12">Entertainment: Music</option>
         <option value="13">Entertainment: Musicals & Theaters</option>

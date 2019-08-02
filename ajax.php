@@ -1,11 +1,11 @@
 <?php
 session_start();
 
-	$db = new mysqli("localhost", "root", "", "quiz");
+  $db = mysqli_connect("localhost", "root", "", "quiz");
 	$id = $_SESSION['id'];
 
   if ($db->connect_errno){
-    
+
 	echo "no";
   }
 

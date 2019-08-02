@@ -1,5 +1,7 @@
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-
+<?php
+  session_start();
+?>
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -82,6 +84,21 @@
         }
       }
 
+      //TESTING FUNCTION
+        function addFunction (x, y) {
+        return (x + y);
+       }
+
+       function addFunctionTest(){
+         var x = 7;
+         var y = 8;
+         var sum = addFunction(x, y);
+         if(sum !=15){
+           alert("Function doesnt work!!");
+         }
+       }
+       //
+
 
       function sendAnswer(){
         var res = event.target.getAttribute('data-cor');
@@ -96,7 +113,8 @@
         }
 
         if(res=='true'){
-          answers.correct ++;
+
+          answers.correct = addFunction(answers.correct, 1); //Testing answers.correct
           correctInput.value = answers.correct;
           selAnswer.innerHTML = 'Correct!!'
 

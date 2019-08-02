@@ -1,7 +1,8 @@
 <?php
 session_start();
 
-$db = new mysqli("localhost", "root", "", "quiz");
+$db = mysqli_connect("localhost", "root", "", "quiz");
+
 ?>
  <!DOCTYPE HTML>
 <html>
@@ -21,6 +22,7 @@ $db = new mysqli("localhost", "root", "", "quiz");
 	<form action="select.php" method="post">
 	<input type="submit" value="New test">
 	</form>
+  <br>
 
 	<input onclick="change()" type="button" id="btn" value="Display"></input>
   <script>
@@ -33,7 +35,20 @@ $db = new mysqli("localhost", "root", "", "quiz");
 	$id = $_SESSION['id'];
 	$test = mysqli_query($db, "SELECT * FROM test WHERE id = $id ORDER BY tid DESC LIMIT 1");
 	while ($row = mysqli_fetch_array($test)) { ?>
-		<p> The result of test is <?php echo $row['tpoints']; ?>/10 </p>
+    <script>
+    var points = "<?php echo $row['tpoints']; ?>";
+    if(points <= 2){
+      alert("Low score!! You found only "+ points + " out of 10");
+    }else if (points == 3 || points == 4 ){
+      alert("Below avarage score!! You found "+ points + " out of 10");
+    }else if (points == 5 || points==6 ){
+      alert("Avarage score!! You found "+ points + " out of 10");
+    }else if (points == 7 || points==8 || points==9 ){
+      alert("Above avarage score!! You found "+ points + " out of 10");
+    }else if (points==10 ){
+      alert("Excellent!! You found "+ points + " out of 10");
+    }
+    </script>
 		<?php
 }?>
 
@@ -62,6 +77,27 @@ $db = new mysqli("localhost", "root", "", "quiz");
 		 <?php $i++; } ?>
 
      </tbody>
+     <?php
+  $id = $_SESSION['id'];
+  $result = mysqli_query($db, "SELECT SUM(tpoints) AS value_sum FROM test WHERE id = $id");
+  $row = mysqli_fetch_assoc($result);
+  $sum = $row['value_sum'];
+  ?>
+
+  <p id="points"></p>
+  <p id="level"></p>
+
+  <script>
+  var total = "<?php echo $row['value_sum']; ?>";
+  document.getElementById("points").innerHTML = "You have "+total+" points";
+
+  if(total < 20){
+  document.getElementById("level").innerHTML = "You are currently level 0. Reach 20 points to get Level 1";
+  } else if( total >= 20 && total <50){
+    document.getElementById("level").innerHTML = "You just reached level 1 and need 50 points overall to get level 2";
+  }
+  </script>
    </table>
+
  </body>
 </html>
