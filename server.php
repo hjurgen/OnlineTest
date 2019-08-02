@@ -27,7 +27,8 @@ if (isset($_POST['reg_user'])) {
   	mysqli_query($db, $query);
   	$_SESSION['username'] = $username;
   	$_SESSION['success'] = "You are now registered";
-    $_SESSION['id'] = $user['id'];
+    $_SESSION['id'] = mysqli_insert_id($db);
+;
   	header('location: select.php');
   }
 }

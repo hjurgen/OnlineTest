@@ -6,7 +6,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <title>Test</title>
-    <link href="style.css" rel="stylesheet" type="text/css">
+    <link href="style.css?v=1" rel="stylesheet" type="text/css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css">
   </head>
   <body>
@@ -20,10 +20,12 @@
     <div id="output"></div>
     <div id="selAnswers"></div>
     <input onclick="change()" type="button" id="btn" value="Start test"></input>
+    <input type="text" style="display:none" id="correct" value="0" name="correct" />
 
     <script>
     var btn = document.getElementById ('btn');
     var correctInput = document.getElementById('correct');
+
 
     function change()
     {
@@ -76,6 +78,7 @@
         }
       }
 
+
       function sendAnswer(){
         var res = event.target.getAttribute('data-cor');
         var correctAnswerValue = correctAnswers();
@@ -90,7 +93,6 @@
           selAnswer.innerHTML = 'Correct!!'
 
         }else{
-          answers.wrong ++;
           selAnswer.innerHTML = 'Wrong it was '+correctAnswerValue
         }
       }
