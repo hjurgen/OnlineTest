@@ -31,6 +31,7 @@
     <?php endif ?>
 </div>
 
+<div class="box";
 <p>Select Category:</p>
     <form action="index.php" method="post">
     <select name="category" id="category">
@@ -56,7 +57,8 @@
     </select>
     <br>
     <br>
-    <input type="submit" value="Submit">
+    <input type="submit" value="Submit" class="btn1">
+</div>
 </form>
 </body>
 </html>

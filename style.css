@@ -1,6 +1,55 @@
-.input-group{
-  width:500px;
-  margin:0 auto;
+div.a{
+    position: absolute;
+    height: 200px;
+    width: 400px;
+    top: 45%;
+    left: 40%;
+}
+
+div.box {
+  background-color: #aee0e6;
+  width: 300px;
+  border: 5px solid green;
+  border-color: #395870;
+  padding: 50px;
+  margin: 20px;
+}
+
+#container > div
+{
+    display: inline-block;
+    border: solid 1px #000;
+}
+#container
+{
+    border: solid 5px #395870;
+    text-align: center;
+    margin: 20px auto;
+    width: 40%;
+}
+
+.button123{
+  position: absolute;
+  height: 50px;
+  top: 45%;
+  left: 40%;
+}
+
+.button123, .btn1, .submitbtn {
+  color: #fff;
+  background-color: #337ab7;
+  border-color: #2e6da4;
+}
+
+.button123.focus, .btn1.focus,.submitbtn.focus {
+  color: #fff;
+  background-color: #286090;
+  border-color: #122b40;
+}
+.button123:hover, .btn1:hover, .submitbtn:hover {
+  color: #fff;
+  background-color: #286090;
+  border-color: #204d74;
 }
 
 body{

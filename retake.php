@@ -20,11 +20,11 @@ $db = mysqli_connect("localhost", "root", "", "quiz");
     </div>
   </nav>
 	<form action="select.php" method="post">
-	<input type="submit" value="New test">
+	<input type="submit" value="New test" class="btn1">
 	</form>
   <br>
 
-	<input onclick="change()" type="button" id="btn" value="Display"></input>
+	<input onclick="change()" type="button" id="btn" value="Display" class="btn1"></input>
   <script>
 	function change(){
     table.style.display='block';
@@ -95,9 +95,11 @@ $db = mysqli_connect("localhost", "root", "", "quiz");
   document.getElementById("level").innerHTML = "You are currently level 0. Reach 20 points to get Level 1";
   } else if( total >= 20 && total <50){
     document.getElementById("level").innerHTML = "You just reached level 1 and need 50 points overall to get level 2";
+  } else if( total >= 50){
+    document.getElementById("level").innerHTML = "You just reached level 2 and need 200 points overall to get level 3";
   }
   </script>
-   </table>
+  </table>
 
  </body>
 </html>

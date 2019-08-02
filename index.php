@@ -8,7 +8,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <title>Test</title>
-    <link href="style.css?v=1" rel="stylesheet" type="text/css">
+    <link href="style.css?v=2" rel="stylesheet" type="text/css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css">
   </head>
   <body>
@@ -19,12 +19,14 @@
       </div>
     </nav>
 
+    <div id="container">
     <div id="output"></div>
     <div id="selAnswers"></div>
-    <input onclick="change()" type="button" id="btn" value="Start test"></input>
+    </div>
+    <input onclick="change()" type="button" id="btn" value="Start test" class="button123"></input>
     <form action="ajax.php" method="post" id="postform">
     <input type="text" style="display:none" id="correct" value="0" name="correct" />
-    <input type="submit" id="submitbtn" style="display: none" value="Submit" />
+    <input type="submit" id="submitbtn" style="display: none" value="Submit" class="button123" />
     </form>
     <script>
     var btn = document.getElementById ('btn');
