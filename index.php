@@ -20,11 +20,15 @@
     <div id="output"></div>
     <div id="selAnswers"></div>
     <input onclick="change()" type="button" id="btn" value="Start test"></input>
+    <form action="ajax.php" method="post" id="postform">
     <input type="text" style="display:none" id="correct" value="0" name="correct" />
-
+    <input type="submit" id="submitbtn" style="display: none" value="Submit" />
+    </form>
     <script>
     var btn = document.getElementById ('btn');
+    var submit = document.getElementById ('submitbtn');
     var correctInput = document.getElementById('correct');
+
 
 
     function change()
@@ -85,6 +89,10 @@
 
         if (counter < 10) {
           btn.style.display='block'
+        }
+
+        if (counter >= 10) {
+          submit.style.display='block'
         }
 
         if(res=='true'){
